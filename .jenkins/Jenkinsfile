@@ -4,11 +4,8 @@ def function1(){
         node {
             cleanWs()
             checkout scm
-            def buildImage = docker.build("ubuntu", "${WORKSPACE}/.jenkins")
-            buildImage.inside {
-                dir("${WORKSPACE}/src/Linux") {
-                    sh 'touch myfile'
-                }
+            dir("${WORKSPACE}//Linux") {
+                sh 'touch myfile'
             }
         }
     }
