@@ -1,0 +1,16 @@
+
+def function1(){
+    stage("pilica first test") {
+    node {
+        cleanWs()
+        checkout scm
+        def buildImage = docker.build("ubuntu", "${WORKSPACE}/.jenkins")
+        buildImage.inside {
+            dir("${WORKSPACE}src/Linux") {
+                sh 'touch myfile'
+            }
+        }
+    }
+}
+
+parallel "ACC1604 SGX1-FLC Container RelWithDebInfo" : { function1() },
