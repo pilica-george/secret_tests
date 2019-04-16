@@ -13,4 +13,4 @@ def function1(){
     }
 }
 
-parallel "ACC1604 SGX1-FLC Container RelWithDebInfo" : { function1() },
+parallel "ACC1604 SGX1-FLC Container RelWithDebInfo" : { function1() }
