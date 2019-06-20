@@ -1,3 +1,2 @@
-Get-Service winrm
-
+Get-Service WebClient
 Exit 0
